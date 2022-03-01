@@ -22,6 +22,17 @@ export class CharacterService {
 		return this.httpClient.get<Character>( URLAPI + '/character/' + id );
 	}
 
+	public filter( id:number ):Observable<Character>{
+		/*
+		name: filter by the given name.
+		status: filter by the given status (alive, dead or unknown).
+		species: filter by the given species.
+		type: filter by the given type.
+		gender: filter by the given gender (female, male, genderless or unknown).
+		*/
+		return this.httpClient.get<Character>( URLAPI + '/character/' + id );
+	}
+
 	public list( page:number ):Observable<Result<Character[]>>{
 
 		return this.httpClient.get<Result<Character[]>>( URLAPI + '/character/?page=' + page );
