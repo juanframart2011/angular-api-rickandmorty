@@ -1,30 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CharacterComponent } from './page/character/character.component';
-import { LocationComponent } from './page/location/location.component';
-import { EpisodeComponent } from './page/episode/episode.component';
 import { HomeComponent } from './page/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    children: [
-     {
-       path: 'character',
-       component: CharacterComponent
-     },
-     {
-       path: 'location',
-       component: LocationComponent
-     },
-     {
-       path: 'episode',
-       component: EpisodeComponent
-     }
-    ]
+    component: HomeComponent
   },
-  {  path: '**', redirectTo: 'character' },
+  {
+    path: 'character',
+    loadChildren: () => import('./page/character/character.module').then(m => m.CharacterModule)
+  },
+  {
+    path: 'episode',
+    loadChildren: () => 
+    import('./page/episode/episode.module').then(m => m.EpisodeModule)
+  },
+  {
+    path: 'location',
+    loadChildren: () => 
+    import('./page/location/location.module').then(m => m.LocationModule)
+  },
+  {  path: '**', redirectTo: '' },
 ];
 
 @NgModule({
