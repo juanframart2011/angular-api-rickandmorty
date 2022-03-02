@@ -10,18 +10,30 @@ import { CharacterComponent } from './page/character/character.component';
 import { EpisodeComponent } from './page/episode/episode.component';
 import { LocationComponent } from './page/location/location.component';
 
+
+import { MatSliderModule } from '@angular/material/slider';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { HomeComponent } from './page/home/home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     CharacterComponent,
     EpisodeComponent,
-    LocationComponent
+    LocationComponent,
+    HomeComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+	BrowserModule,
+	AppRoutingModule,
 	HttpClientModule,
-    BrowserAnimationsModule
+	BrowserAnimationsModule,
+  MatSliderModule,
+  MatPaginatorModule,
+  MatTableModule,
+  MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
