@@ -1,4 +1,6 @@
-import {Component, ViewChild, AfterViewInit} from '@angular/core';
+import {Component, ViewChild, OnInit, AfterViewInit} from '@angular/core';
+//import { MatTableDataSource, MatSort } from '@angular/material';
+import { DataSource } from '@angular/cdk/table';
 
 export interface PeriodicElement {
   name: string;
@@ -25,14 +27,35 @@ selector: 'app-character',
 templateUrl: './character.component.html',
 styleUrls: ['./character.component.scss']
 })
-export class CharacterComponent implements AfterViewInit {
+export class CharacterComponent implements OnInit {
   
-	displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+	//displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+	//dataSource = ELEMENT_DATA;
 
-  constructor() {}
+	dataSource:any = [];
+	displayedColumns = [];
+	//@ViewChild(MatSort) sort: MatSort;
+
+	constructor() {}
 
   ngAfterViewInit() { }
+
+  ngOnInit() {
+    //this.displayedColumns = this.columnNames.map(x => x.id);
+    this.createTable();
+  }
+
+  createTable() {
+    /*let tableArr: Element[] = [{ position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+      { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
+      { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
+      { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
+      { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
+      { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
+    ];*/
+    //this.dataSource = new MatTableDataSource(ELEMENT_DATA);
+    //this.dataSource.sort = this.sort;
+  }
 
   /*applyFilter(event: Event) {
 	const filterValue = (event.target as HTMLInputElement).value;
