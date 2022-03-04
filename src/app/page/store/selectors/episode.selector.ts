@@ -5,7 +5,7 @@ import { episodeFeatureName, EpisodeState } from '../app.state';
 
 export const getEpisodeFeatureState = createFeatureSelector<EpisodeState>(episodeFeatureName);
 
-export const selectDigitalFile = createSelector(
+export const selectEpisode = createSelector(
   getEpisodeFeatureState,
   (state: EpisodeState) => state.getAllEpisode
 );

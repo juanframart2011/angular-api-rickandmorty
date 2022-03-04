@@ -5,7 +5,7 @@ import { characterFeatureName, CharacterState } from '../app.state';
 
 export const getCharacterFeatureState = createFeatureSelector<CharacterState>(characterFeatureName);
 
-export const selectDigitalFile = createSelector(
+export const selectCharacter = createSelector(
   getCharacterFeatureState,
   (state: CharacterState) => state.getAllCharacter
 );

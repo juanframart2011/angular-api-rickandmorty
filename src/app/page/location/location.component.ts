@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-location',

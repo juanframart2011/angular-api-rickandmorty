@@ -5,7 +5,7 @@ import { locationFeatureName, LocationState } from '../app.state';
 
 export const getLocationFeatureState = createFeatureSelector<LocationState>(locationFeatureName);
 
-export const selectDigitalFile = createSelector(
+export const selectLocation = createSelector(
   getLocationFeatureState,
   (state: LocationState) => state.getAllLocation
 );
