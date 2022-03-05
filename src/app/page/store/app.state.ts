@@ -9,6 +9,7 @@ export const locationFeatureName = 'LOCATION';
 
 export interface CharacterState {
 	getAllCharacter?: Result<Character[]>;
+	getDetailCharacter?: Character;
 	errorMessage?: string | undefined;
 }
 

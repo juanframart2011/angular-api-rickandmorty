@@ -8,9 +8,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { locationFeatureName } from '../store/app.state';
 import { locationReducer } from '../store/reducers/location.reducer';
 import { LocationEffects } from '../store/effects/location.effect';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    DetailComponent
+  ],
   imports: [
     CommonModule,
     LocationRoutingModule,

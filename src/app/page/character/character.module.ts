@@ -15,9 +15,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { DetailComponent } from './detail/detail.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
-  declarations: [CharacterComponent],
+  declarations: [CharacterComponent, DetailComponent],
   imports: [
     CommonModule,
     MatSortModule,
@@ -30,7 +33,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatPaginatorModule,
     MatInputModule,
 		MatFormFieldModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatCardModule,
+    MatButtonModule
   ],
   exports:[]
 })

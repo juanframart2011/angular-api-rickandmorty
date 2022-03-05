@@ -14,7 +14,7 @@
 				</div>
 				<div class="ldeZQp">
 					<div class="section">
-						<a href="https://rickandmortyapi.com/api/character/107" rel="nofollow noopener noreferrer" target="_blank"><h2>{{ character.name }}</h2></a>
+						<a routerLink="detail/{{ character.id }}" rel="nofollow noopener noreferrer"><h2>{{ character.name }}</h2></a>
 						<span class="status"><span  [ngClass]="character.status" class="status__icon"></span> {{ character.status }} - {{ character.species }}</span>
 					</div>
 					<div class="section">
@@ -40,18 +40,3 @@
 		aria-label="Select page">
 	</mat-paginator>
 </ng-container>
-  
-  
-<!--
-created: "2017-11-04T18:48:46.250Z"
-episode: ["https://rickandmortyapi.com/api/episode/1", "https://rickandmortyapi.com/api/episode/2",…]
-: "Male"
-id: 1
-: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-location: {name: "Citadel of Ricks", url: "https://rickandmortyapi.com/api/location/3"}
-: "Rick Sanchez"
-origin: {name: "Earth (C-137)", url: "https://rickandmortyapi.com/api/location/1"}
-: "Human"
-status: "Alive"
-type: ""
-url: "https://rickandmortyapi.com/api/character/1"-->

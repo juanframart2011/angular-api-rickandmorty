@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { CharacterState } from '../store/app.state';
 import { getAllCharacters } from '../store/actions/character.actions';
@@ -13,7 +13,7 @@ import { Info } from '../../interface/info';
 	templateUrl: './character.component.html',
 	styleUrls: ['./character.component.scss']
 })
-export class CharacterComponent implements AfterViewInit, OnInit, OnDestroy{
+export class CharacterComponent implements OnInit, OnDestroy{
 
 	@ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -30,8 +30,6 @@ export class CharacterComponent implements AfterViewInit, OnInit, OnDestroy{
 	constructor(
 		private storeCharacter: Store<CharacterState>
 	){}
-
-	ngAfterViewInit(){}
 
 	ngOnInit(){
 		
@@ -62,16 +60,14 @@ export class CharacterComponent implements AfterViewInit, OnInit, OnDestroy{
 		this.selectErrors$.subscribe((value) => {
 
 			console.warn( 'Charcters Error', value );
-			//this.dialogService.openError('Expedientes Error', value ?? '');
 		});
 	}
 
 	applyFilter(event: Event) {
 		
 		const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
-		console.log( "applyFilter() => ", filterValue );
 		let search = this.charactersCurrent.filter( c => c.name.includes( filterValue ) );
-		console.log( "search => ", search );
+		
 		this.characters = search;
 	}
 

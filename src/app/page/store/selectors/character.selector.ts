@@ -10,6 +10,11 @@ export const selectCharacter = createSelector(
   (state: CharacterState) => state.getAllCharacter
 );
 
+export const selectCharacterDetail = createSelector(
+  getCharacterFeatureState,
+  (state: CharacterState) => state.getDetailCharacter
+);
+
 export const selectErrors = createSelector(
   getCharacterFeatureState,
   (state: CharacterState) => state.errorMessage
