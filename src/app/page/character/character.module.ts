@@ -14,7 +14,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [CharacterComponent],
@@ -29,7 +30,9 @@ import { MatInputModule } from '@angular/material/input';
 		EffectsModule.forFeature([CharacterEffects]),
     MatPaginatorModule,
     MatInputModule,
-		MatFormFieldModule
+		MatFormFieldModule,
+    MatGridListModule,
+    MatCardModule
   ],
   exports:[]
 })
