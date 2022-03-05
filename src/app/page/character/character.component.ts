@@ -25,6 +25,7 @@ export class CharacterComponent implements AfterViewInit, OnInit, OnDestroy{
 	public page:number = 1;
 	public characters:any[] = [];
 	public info:any;
+	public charactersCurrent:any[] = [];
 
 	constructor(
 		private storeCharacter: Store<CharacterState>
@@ -53,8 +54,8 @@ export class CharacterComponent implements AfterViewInit, OnInit, OnDestroy{
 				
 				this.loadingCharacter = false;
 				this.characters = value.results;
+				this.charactersCurrent = this.characters;
 				this.info = value.info;
-				console.log( this.characters );
 			}
 		});
 
@@ -73,25 +74,18 @@ export class CharacterComponent implements AfterViewInit, OnInit, OnDestroy{
 	handlePageEvent( event:PageEvent ){
 
 		this.loadingCharacter = true;
-		console.info( "paginator evento => ", event );
-		if( event.pageSize != this.pageSize  ){
+		
+		console.info( "paginator evento => ", event, " page => ", this.page );
+		if( this.page == ( event.pageIndex + 1 ) ){
 
+			//event.pageSize != this.pageSize
+			console.info( "hola" );
+			/*this.characters = value.results;
+			this.charactersCurrent = this.characters;*/
 		}
 		else{
 
 			this.page = event.pageIndex + 1;
-			/*console.log( "actual => ", this.page );
-			if( this.page < pageNext ){
-
-				console.info( "sumar" );
-				this.page = pageNext;
-			}
-			else{
-
-				console.info( "restar" );
-				this.page = event.pageIndex;
-			}*/
-			console.log( "pages => ", event.pageIndex, " actual => ", this.page );
 			this._load();
 		}
 	}
