@@ -20,7 +20,9 @@ export class CharacterComponent implements AfterViewInit, OnInit, OnDestroy{
 	selectCharacter$ = this.storeCharacter.pipe(select(selectCharacter));
 	selectErrors$ = this.storeCharacter.pipe(select(selectErrors));
 
-	public page:number = 0;
+	public loadingCharacter:boolean = true;
+	public pageSize:number = 20;
+	public page:number = 1;
 	public characters:any[] = [];
 	public info:any;
 
@@ -49,6 +51,7 @@ export class CharacterComponent implements AfterViewInit, OnInit, OnDestroy{
 				
 			if (value != undefined) {
 				
+				this.loadingCharacter = false;
 				this.characters = value.results;
 				this.info = value.info;
 				console.log( this.characters );
@@ -67,9 +70,30 @@ export class CharacterComponent implements AfterViewInit, OnInit, OnDestroy{
 		const filterValue = (event.target as HTMLInputElement).value;
 	}
 
-	handlePageEvent( event:any ){
+	handlePageEvent( event:PageEvent ){
 
+		this.loadingCharacter = true;
 		console.info( "paginator evento => ", event );
+		if( event.pageSize != this.pageSize  ){
+
+		}
+		else{
+
+			this.page = event.pageIndex + 1;
+			/*console.log( "actual => ", this.page );
+			if( this.page < pageNext ){
+
+				console.info( "sumar" );
+				this.page = pageNext;
+			}
+			else{
+
+				console.info( "restar" );
+				this.page = event.pageIndex;
+			}*/
+			console.log( "pages => ", event.pageIndex, " actual => ", this.page );
+			this._load();
+		}
 	}
 
 	ngOnDestroy() {

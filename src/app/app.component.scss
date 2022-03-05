@@ -292,3 +292,8 @@ svg#clouds {
 .section{
     width: 100%;
 }
+
+.active, a:active{
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgb(0 0 0 / 35%);
+}

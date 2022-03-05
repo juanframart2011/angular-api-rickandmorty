@@ -14,8 +14,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatCardModule} from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [CharacterComponent],
@@ -31,8 +30,7 @@ import {MatCardModule} from '@angular/material/card';
     MatPaginatorModule,
     MatInputModule,
 		MatFormFieldModule,
-    MatGridListModule,
-    MatCardModule
+    MatProgressSpinnerModule
   ],
   exports:[]
 })
