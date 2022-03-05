@@ -68,26 +68,19 @@ export class CharacterComponent implements AfterViewInit, OnInit, OnDestroy{
 
 	applyFilter(event: Event) {
 		
-		const filterValue = (event.target as HTMLInputElement).value;
+		const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+		console.log( "applyFilter() => ", filterValue );
+		let search = this.charactersCurrent.filter( c => c.name.includes( filterValue ) );
+		console.log( "search => ", search );
+		this.characters = search;
 	}
 
 	handlePageEvent( event:PageEvent ){
 
 		this.loadingCharacter = true;
 		
-		console.info( "paginator evento => ", event, " page => ", this.page );
-		if( this.page == ( event.pageIndex + 1 ) ){
-
-			//event.pageSize != this.pageSize
-			console.info( "hola" );
-			/*this.characters = value.results;
-			this.charactersCurrent = this.characters;*/
-		}
-		else{
-
-			this.page = event.pageIndex + 1;
-			this._load();
-		}
+		this.page = event.pageIndex + 1;
+		this._load();
 	}
 
 	ngOnDestroy() {

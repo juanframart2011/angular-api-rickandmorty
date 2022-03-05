@@ -2,13 +2,6 @@
 	<mat-label>Filter for name</mat-label>
 	<input matInput (keyup)="applyFilter($event)" placeholder="name" #input>
 </mat-form-field>
-<!--
-<td class="text-center">{{ character.id }}</td>
-<td class="text-center"></td>
-<td class="text-center">{{ character.location.name }}Location</td>
-<td class="text-center"></td>
-<td class="text-center">{{ character.origin.name }}</td>
-<td class="text-center">{{ character.episode.length }}</td>-->
 
 <section class="kZQvlq">
 	<mat-spinner *ngIf="loadingCharacter"></mat-spinner>
@@ -22,7 +15,7 @@
 				<div class="ldeZQp">
 					<div class="section">
 						<a href="https://rickandmortyapi.com/api/character/107" rel="nofollow noopener noreferrer" target="_blank"><h2>{{ character.name }}</h2></a>
-						<span class="status"><span class="status__icon"></span> {{ character.status }} - {{ character.species }}</span>
+						<span class="status"><span  [ngClass]="character.status" class="status__icon"></span> {{ character.status }} - {{ character.species }}</span>
 					</div>
 					<div class="section">
 						<span class="text-gray">Last known location:</span>

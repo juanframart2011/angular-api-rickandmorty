@@ -97,8 +97,18 @@
 	height: 0.5rem;
 	width: 0.5rem;
 	margin-right: 0.375rem;
-	background: rgb(85, 204, 68);
 	border-radius: 50%;
+	}
+	.status__icon.Alive{
+		background: rgb(85, 204, 68);
+	}
+	.status__icon.Dead{
+		
+		background: rgb(204, 68, 75);
+	}
+	.status__icon.unknown{
+		
+		background: rgb(158, 158, 158);
 	}
 	.ldeZQp .text-gray {
 	color: rgb(158, 158, 158);
