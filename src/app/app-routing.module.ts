@@ -9,7 +9,8 @@ const routes: Routes = [
   },
   {
     path: 'character',
-    loadChildren: () => import('./page/character/character.module').then(m => m.CharacterModule)
+    loadChildren: () => 
+    import('./page/character/character.module').then(m => m.CharacterModule)
   },
   {
     path: 'episode',

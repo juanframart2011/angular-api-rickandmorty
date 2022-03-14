@@ -22,15 +22,6 @@ export class LocationService {
 		return this.httpClient.get<Location>( URLAPI + '/location/' + id );
 	}
 
-	public filter( id:number ):Observable<Location>{
-		/*
-		name: filter by the given name.
-		type: filter by the given type.
-		dimension: filter by the given dimension.
-		*/
-		return this.httpClient.get<Location>( URLAPI + '/location/' + id );
-	}
-
 	public list( page:number ):Observable<Result<Location[]>>{
 
 		return this.httpClient.get<Result<Location[]>>( URLAPI + '/location/?page=' + page );
