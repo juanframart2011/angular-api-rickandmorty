@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './page/home/home.component';
 
 import { CommonModule } from '@angular/common';
+import { CharacterUrlLocationPipe } from './pipe/character-url-location.pipe';
 
 @NgModule({
 	declarations: [

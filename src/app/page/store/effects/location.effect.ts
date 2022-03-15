@@ -28,6 +28,35 @@ export class LocationEffects {
 				this.locationService.list( value.page ).pipe(
 					map((data) => {
 						
+						/*let resultsCurrent:Location[] = [];
+
+						data.results.filter( v =>{
+							debugger;
+							let characters:string[] = [];
+							
+							v.residents.filter( c =>{
+
+								let strings = c.split( "/api/character/" );
+								characters.push( strings[1] );
+							});
+
+							/*resultsCurrent.push({
+								id: value.id,
+								name: value.name,
+								type: value.type,
+								dimension: value.dimension,
+								residents: characters,
+								url: value.url,
+								created: value.created
+							});
+						});
+						/*debugger;
+
+						let dataFinish = {
+							info: data.info,
+							results: resultsCurrent
+						}*/
+
 						return successLocations({ locations: data });
 					}),
 					catchError((error) =>

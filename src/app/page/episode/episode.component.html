@@ -1,1 +1,55 @@
-<p>episode works!</p>
+<mat-form-field appearance="standard">
+	<mat-label>Filter for name</mat-label>
+	<input matInput (keyup)="applyFilter($event)" placeholder="name" #input>
+</mat-form-field>
+
+<section class="kZQvlq">
+	<mat-spinner *ngIf="loadingEpisode"></mat-spinner>
+	<div class="iUltZj" style="width: 100%;">
+		<ng-container *ngIf="episodes.length > 0">
+			
+			<table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Air Date</th>
+                        <th>Episode</th>
+                        <th># of charcaters</th>
+                        <th>created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let episode of episodes">
+                        <td>{{ episode.id }}</td>
+                        <td><a (click)="openDialog(episode.characters, episode.name)">{{ episode.name }}</a></td>
+                        <td>{{ episode.air_date }}</td>
+                        <td>{{ episode.episode }}</td>
+                        <td>{{ episode.characters.length }}</td>
+                        <td>{{ episode.created }}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Air Date</th>
+                        <th>Episode</th>
+                        <th># of charcaters</th>
+                        <th>created</th>
+                    </tr>
+                </tfoot>
+            </table>
+		</ng-container>
+	</div>
+</section>
+<ng-container *ngIf="episodes.length > 0">
+
+	<mat-paginator
+		(page)="handlePageEvent($event)"
+		[length]="info.count"
+		[pageSize]="episodes.length"
+		[pageSizeOptions]="[20]"
+		aria-label="Select page">
+	</mat-paginator>
+</ng-container>

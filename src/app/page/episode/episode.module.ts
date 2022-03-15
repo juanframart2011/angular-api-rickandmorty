@@ -16,23 +16,32 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { EpisodeComponent } from './episode.component';
+
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
-  declarations: [EpisodeComponent, DetailComponent],
-  imports: [
-    MatSortModule,
-    MatTableModule,
-    CommonModule,
-    EpisodeRoutingModule,
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot(),
-    StoreModule.forFeature(episodeFeatureName, episodeReducer),
+	declarations: [EpisodeComponent, DetailComponent],
+	imports: [
+		MatSortModule,
+		MatTableModule,
+		CommonModule,
+		EpisodeRoutingModule,
+		StoreModule.forRoot({}),
+		EffectsModule.forRoot(),
+		StoreModule.forFeature(episodeFeatureName, episodeReducer),
 		EffectsModule.forFeature([EpisodeEffects]),
-    MatPaginatorModule,
-    MatInputModule,
+		MatPaginatorModule,
+		MatInputModule,
 		MatFormFieldModule,
-    MatProgressSpinnerModule
-  ]
+		MatProgressSpinnerModule,
+		MatCardModule,
+		MatButtonModule,
+		MatSortModule,
+		MatTableModule,
+		MatDialogModule
+	]
 })
 export class EpisodeModule { }

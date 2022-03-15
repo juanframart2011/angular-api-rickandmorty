@@ -22,14 +22,6 @@ export class EpisodeService {
 		return this.httpClient.get<Episode>( URLAPI + '/episode/' + id );
 	}
 
-	public filter( id:number ):Observable<Episode>{
-		/*
-		name: filter by the given name.
-		episode: filter by the given episode code.
-		*/
-		return this.httpClient.get<Episode>( URLAPI + '/episode/' + id );
-	}
-
 	public list( page:number ):Observable<Result<Episode[]>>{
 
 		return this.httpClient.get<Result<Episode[]>>( URLAPI + '/episode/?page=' + page );

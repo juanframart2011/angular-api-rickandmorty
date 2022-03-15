@@ -17,11 +17,6 @@ export class LocationService {
 		private httpClient: HttpClient
 	){}
 
-  	public detail( id:number ):Observable<Location>{
-
-		return this.httpClient.get<Location>( URLAPI + '/location/' + id );
-	}
-
 	public list( page:number ):Observable<Result<Location[]>>{
 
 		return this.httpClient.get<Result<Location[]>>( URLAPI + '/location/?page=' + page );

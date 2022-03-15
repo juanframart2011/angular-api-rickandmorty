@@ -90,7 +90,8 @@ export class LocationComponent implements OnInit, OnDestroy{
 			this.dialog.open(DetailComponent, {
 				data: {
 					characters:characters,
-					locationName: locationName
+					locationName: locationName,
+					type:1
 				}
 			});
 		}

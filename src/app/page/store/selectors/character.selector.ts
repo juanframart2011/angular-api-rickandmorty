@@ -1,6 +1,4 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { pipe } from 'rxjs';
-import { filter } from 'rxjs/operators';
 import { characterFeatureName, CharacterState } from '../app.state';
 
 export const getCharacterFeatureState = createFeatureSelector<CharacterState>(characterFeatureName);

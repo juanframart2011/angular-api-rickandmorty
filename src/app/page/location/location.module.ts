@@ -8,7 +8,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { locationFeatureName } from '../store/app.state';
 import { locationReducer } from '../store/reducers/location.reducer';
 import { LocationEffects } from '../store/effects/location.effect';
-import { DetailComponent } from './detail/detail.component';
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatSortModule } from '@angular/material/sort';
@@ -20,13 +19,12 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { LocationComponent } from './location.component';
-import { CharacterUrlLocationPipe } from 'src/app/pipe/character-url-location.pipe';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
 	declarations: [
 		LocationComponent,
-		DetailComponent,
-		CharacterUrlLocationPipe
+		DetailComponent
 	],
 	imports: [
 		CommonModule,

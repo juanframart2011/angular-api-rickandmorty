@@ -20,7 +20,7 @@ export const reducer = createReducer(
 	on(getAllEpisodes, (state) => state),
 	on(successEpisodes, (state, payload) => ({
 		...state,
-		getAllCharacter: payload.episodes,
+		getAllEpisode: payload.episodes,
 	})),
 	on(failsEpisodes, (state, payload) => ({
 		...state,

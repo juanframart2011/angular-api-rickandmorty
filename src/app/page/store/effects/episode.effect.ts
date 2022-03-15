@@ -28,6 +28,35 @@ export class EpisodeEffects {
 				this.episodeService.list( value.page ).pipe(
 					map((data) => {
 						
+						let results:any = [];
+
+						/*data.results.filter( value =>{
+
+							let characters:any = [];
+
+							value.filter( v =>{
+
+								let strings = v.split( "/api/character/" );
+								characters.push( strings[1] );
+							});
+
+							results.push({
+								id: value.id,
+								name: value.name,
+								air_date: value.air_date,
+								episode: value.episode,
+								characters: characters,
+								url: value.url,
+								created: value.created
+							});
+						});*/
+
+
+						let dataFinish = {
+							info: data.info,
+							results: results
+						}
+
 						return successEpisodes({ episodes: data });
 					}),
 					catchError((error) =>
