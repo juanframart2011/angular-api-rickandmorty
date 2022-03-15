@@ -1,7 +1,7 @@
 <h1 mat-dialog-title>{{ locationCurrentName }}</h1>
 <div mat-dialog-content><ul>
 		<li *ngFor="let character of characters">
-			<a routerLink="character/detail/{{ character }}" rel="nofollow noopener noreferrer"><h2>{{ character }}</h2></a>
+			<a href="{{ character }}" target="_blank" rel="nofollow noopener noreferrer"><h2>{{ character }}</h2></a>
 		</li>
 	</ul>
 </div>
